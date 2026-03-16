@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+
+
 st.set_page_config(page_title="BizIntelligence Aroma & Grano", layout="wide")
 st.title("📊 BI Dashboard: Aroma & Grano")
 
@@ -12,6 +14,11 @@ def cargar_inventario():
     return pd.read_csv("ventas_pro.csv")
 
 df = cargar_inventario()
+
+st.text_area("✍️ Tu explicación (Propias palabras, sin IA):",
+             value=""" Este fragmento de código carga los datos del inventario desde un archivo CSV.""", key="reflexion_paso_2")
+
+st.divider()
 
 # --- SONDEO INICIAL (Teoría en acción) ---
 st.header("🔍 1. Sondeo de Categorías")
